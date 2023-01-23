@@ -1,20 +1,27 @@
-from flask import Flask
+# Import request module from flask
+from flask import Flask, request
 import requests
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
-# Add something here about method action and endpoint
-@app.route('/extract', methods['GET'])
+# Define the endpoint and HTTP request method
+@app.route("/extract", methods=["GET"])
+def extract_text():
+  # grab url from query parameter of GET request
+  url = request.args.get("url")
+  print(request.args)
+  
+  # send GET request to url, returning the HTML response
+  response = requests.get(url)
+  print(response)
 
-def extract()
-  url = request.args.get("URL")
-  
-  request = request.get(url)
-  
-  # Retrieve text and parse it
-  text = request(request.text, "parse-text")
+  # Retrieve text and parse it with BeautifulSoup
+  soup = BeautifulSoup(response.text, "html.parser")
+
+  # Extract plain text
+  text = soup.get_text()
   return text
 
-
-app.run()
+if __name__ == "__main__":
+  app.run()
