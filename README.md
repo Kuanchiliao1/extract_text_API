@@ -16,19 +16,27 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 1. Clone the repository
-```git clone https://github.com/<your-username>/extract-text-api.git```
+```
+git clone https://github.com/<your-username>/extract-text-api.git
+```
 
 2. Navigate to the project directory
-```cd extract-text-api```
+```
+cd extract-text-api
+```
 
 3. Install the dependencies
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 
 ### Running the app
 
 To run the app, use the following command:
-```python app.py```
+```
+python app.py
+```
 
 The app will be running on http://localhost:5000/
 
@@ -36,7 +44,9 @@ The app will be running on http://localhost:5000/
 
 You can test the app by sending a GET request to the endpoint with a website URL as a query parameter.
 For example, you can use the following curl command to test the app:
-```curl http://localhost:5000/extract?url=http://example.com```
+```
+curl http://localhost:5000/extract?url=http://example.com
+```
 
 ## Built With
 
